@@ -11,7 +11,7 @@ public class Produto{
         return nome;
     }
 
-    public void setNome(){
+    public void setNome(String nome){
         this.nome = nome;
     }
 
@@ -19,13 +19,13 @@ public class Produto{
         return valor;
     }
 
-    public void setValor(){
+    public void setValor(double valor){
         this.valor = valor;
     }
 
     @Override
     public String toString(){
-        return "Produto: " + nome + "Valor: " + valor;
+        return "Produto: " + nome + ", Valor: " + valor;
     }
 }
         
