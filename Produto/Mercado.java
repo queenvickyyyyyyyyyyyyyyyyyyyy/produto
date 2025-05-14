@@ -2,7 +2,6 @@ public class Mercado {
     private Produto[] produtos = new Produto[20];
     private int contador = 0;
 
-    // Adiciona um produto (se ainda houver espaço)
     public boolean adicionarProduto(Produto p) {
         if (contador < produtos.length) {
             produtos[contador] = p;
@@ -14,21 +13,19 @@ public class Mercado {
         }
     }
 
-    // Pesquisa produto pelo nome
     public Produto pesquisarProduto(String nome) {
         for (int i = 0; i < contador; i++) {
             if (produtos[i].getNome().equalsIgnoreCase(nome)) {
                 return produtos[i];
             }
         }
-        return null; // não encontrado
+        return null;
     }
 
-    // Exclui produto pelo nome
+ 
     public boolean excluirProduto(String nome) {
         for (int i = 0; i < contador; i++) {
             if (produtos[i].getNome().equalsIgnoreCase(nome)) {
-                // Desloca os produtos
                 for (int j = i; j < contador - 1; j++) {
                     produtos[j] = produtos[j + 1];
                 }
@@ -37,10 +34,8 @@ public class Mercado {
                 return true;
             }
         }
-        return false; // não encontrado
-    }
+        return false;
 
-    // Mostra todos os produtos
     public void listarProdutos() {
         System.out.println("Produtos no mercado:");
         for (int i = 0; i < contador; i++) {
